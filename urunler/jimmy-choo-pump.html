@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- Temel HTML ayarları -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jimmy Choo Pump - Ayakkabı Blog</title>
+    
+    <!-- Bootstrap ve Font Awesome kütüphaneleri -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Ana renk değişkenleri */
+        :root {
+            --primary-color: #000000;    /* Ana renk: Siyah */
+            --secondary-color: #ffffff;   /* İkincil renk: Beyaz */
+            --accent-color: #333333;     /* Vurgu rengi: Koyu Gri */
+            --light-color: #f5f5f5;      /* Açık renk: Açık Gri */
+            --gray-color: #666666;       /* Gri tonu */
+        }
+        
+        /* Genel sayfa stili */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-color);
+            color: var(--primary-color);
+        }
+
+        /* Üst menü stili */
+        .navbar {
+            background-color: var(--primary-color);
+            border-bottom: 2px solid var(--gray-color);
+        }
+
+        /* Logo stili */
+        .navbar-brand img {
+            height: 40px;
+            filter: none;
+        }
+
+        /* Ürün detay kartı stili */
+        .product-card {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Ürün resmi stili */
+        .product-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Ürün başlığı stili */
+        .product-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Fiyat etiketi stili */
+        .price {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        /* Ürün açıklaması stili */
+        .product-description {
+            color: var(--gray-color);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Özellikler tablosu stili */
+        .specs-table {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .specs-table th {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 12px;
+        }
+
+        .specs-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--gray-color);
+        }
+
+        /* Kombinasyon kartı stili */
+        .combination-card {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Kombinasyon resmi stili */
+        .combination-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Kombinasyon başlığı stili */
+        .combination-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin: 15px 0;
+            padding: 0 15px;
+        }
+
+        /* Kombinasyon açıklaması stili */
+        .combination-description {
+            color: var(--gray-color);
+            padding: 0 15px 15px;
+            line-height: 1.6;
+        }
+
+        /* Bakım ipuçları stili */
+        .care-tips {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .care-tips h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .care-tips ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .care-tips li {
+            color: var(--gray-color);
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .care-tips li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Alt bilgi stili */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Üst Menü -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/logo.jpg" alt="Logo">
+            </a>
+            <!-- Mobil menü butonu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menü öğeleri -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#erkek-spor">Erkek Spor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#erkek-bot">Erkek Bot</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#kadin">Kadın</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#cocuk">Çocuk</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ana İçerik -->
+    <div class="container my-5">
+        <!-- Ürün Detay Kartı -->
+        <div class="product-card">
+            <img src="../images/kadin1.jpg" alt="Jimmy Choo Pump" class="product-image">
+            <h1 class="product-title">Jimmy Choo Pump</h1>
+            <p class="price">4.999 TL</p>
+            <p class="product-description">
+                Jimmy Choo Pump, lüks ve zarafetin simgesi olan ikonik bir topuklu ayakkabı. 
+                Premium deri malzemesi, kristal detayları ve mükemmel işçiliği ile her özel 
+                anın vazgeçilmez parçası. Hem şık hem de konforlu tasarımıyla uzun süre 
+                kullanım sağlar.
+            </p>
+            
+            <!-- Teknik Özellikler Tablosu -->
+            <h3>Teknik Özellikler</h3>
+            <table class="specs-table">
+                <tr>
+                    <th>Marka</th>
+                    <td>Jimmy Choo</td>
+                </tr>
+                <tr>
+                    <th>Model</th>
+                    <td>Pump</td>
+                </tr>
+                <tr>
+                    <th>Renk</th>
+                    <td>Siyah</td>
+                </tr>
+                <tr>
+                    <th>Materyal</th>
+                    <td>Premium Deri</td>
+                </tr>
+                <tr>
+                    <th>Topuk</th>
+                    <td>10 cm</td>
+                </tr>
+                <tr>
+                    <th>Kullanım</th>
+                    <td>Özel Gün / Parti</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Kombinasyon Önerileri -->
+        <h2 class="mb-4">Kombinasyon Önerileri</h2>
+        <div class="row">
+            <!-- Kombin 1 -->
+            <div class="col-md-4">
+                <div class="combination-card">
+                    <h3 class="combination-title">Parti Kombini</h3>
+                    <p class="combination-description">
+                        • Siyah mini elbise<br>
+                        • Gümüş clutch çanta<br>
+                        • Işıltılı küpe<br>
+                        • Kırmızı ruj
+                    </p>
+                </div>
+            </div>
+            <!-- Kombin 2 -->
+            <div class="col-md-4">
+                <div class="combination-card">
+                    <h3 class="combination-title">Kokteyl Kombini</h3>
+                    <p class="combination-description">
+                        • Diz boyu elbise<br>
+                        • İnci kolye<br>
+                        • Şık cüzdan çanta<br>
+                        • Topuz saç
+                    </p>
+                </div>
+            </div>
+            <!-- Kombin 3 -->
+            <div class="col-md-4">
+                <div class="combination-card">
+                    <h3 class="combination-title">Özel Gün Kombini</h3>
+                    <p class="combination-description">
+                        • Uzun abiye elbise<br>
+                        • Taşlı küpe<br>
+                        • Şık şal<br>
+                        • Topuklu ayakkabı
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bakım İpuçları -->
+        <div class="care-tips">
+            <h3>Bakım İpuçları</h3>
+            <ul>
+                <li>Düzenli olarak deri bakım ürünleri kullanın</li>
+                <li>Islak havalarda kullanımdan sonra kurutun</li>
+                <li>Kristal detayları için özel bakım ürünleri kullanın</li>
+                <li>Uzun süre kullanmayacaksanız ayakkabı kutusunda saklayın</li>
+                <li>Düzenli olarak fırçalayın ve havalandırın</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Alt Bilgi -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Ayakkabı Blog</h5>
+                    <p>En yeni ayakkabı modelleri ve trendleri</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <h5>Bizi Takip Edin</h5>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
